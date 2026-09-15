@@ -20,6 +20,7 @@ def test_clean_hiv_data_filters_to_countries():
             "TimeDimensionValue":"2000",
             "TimeDimensionBegin":"2000-01-01",
             "TimeDimensionEnd":"2026-01-01",
+            "Dim1": None,
         },
         {
             "IndicatorCode": "MDG_0000000029",
@@ -36,7 +37,8 @@ def test_clean_hiv_data_filters_to_countries():
             "Date": "2026-01-01",
             "TimeDimensionValue": "2020",
             "TimeDimensionBegin": "2020-01-01",
-            "TimeDimensionEnd": "2020-12-31",
+            "TimeDimensionEnd": "2020-12-31", 
+            "Dim1": None,   # deliberately fully-null column
         },
     ]
 
@@ -44,3 +46,5 @@ def test_clean_hiv_data_filters_to_countries():
 
     assert len(df) == 1
     assert df.iloc[0]["country_code"] == "FRA"
+    assert "Dim1" not in df.columns
+    assert df.shape == (1,6)

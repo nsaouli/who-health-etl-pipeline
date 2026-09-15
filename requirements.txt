@@ -1,8 +1,13 @@
 certifi==2026.7.22
 charset-normalizer==3.5.1
 idna==3.19
+iniconfig==2.3.0
 numpy==2.5.2
+packaging==26.3
 pandas==3.0.5
+pluggy==1.6.0
+Pygments==2.21.0
+pytest==9.1.1
 python-dateutil==2.9.0.post0
 requests==2.34.2
 six==1.17.0
